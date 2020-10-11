@@ -1,0 +1,10 @@
+{% extends "indian_recipes/layout.html" %}
+
+{% block body %}
+  <h1>Indian Recipes</h1>
+  <ul>
+    {% for recipe in recipes %}
+      <li> Recipe {{ recipe.id }}: {{ recipe.title }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
