@@ -23,8 +23,8 @@ class Category(models.Model):
 class Recipe(models.Model):
     title = models.CharField(max_length=64)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="recipes")
-    ingredients = models.ManyToManyField(Ingredient, blank=True)
-    directions = models.ManyToManyField(Direction, blank=True)
+    ingredients = models.ManyToManyField(Ingredient, blank=True, related_name="recipes")
+    directions = models.ManyToManyField(Direction, blank=True, related_name="recipes")
 
     def __str__(self):
         return f"{self.title}"

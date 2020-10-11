@@ -1,0 +1,13 @@
+{% extends "indian_recipes/layout.html" %}
+
+{% block body %}
+<h1>Edit Recipe: {{ recipe.title }}</h1>
+<h3>Ingredients</h3>
+<h3>Directions</h3>
+<a href="{% url 'index' %}">Return to Home Page</a>
+<!-- <form action="{% url 'edit' recipe.id %}" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit">
+</form> -->
+{% endblock %}
