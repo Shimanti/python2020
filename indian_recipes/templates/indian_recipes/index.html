@@ -4,7 +4,11 @@
   <h1>Indian Recipes</h1>
   <ul>
     {% for recipe in recipes %}
-      <li> Recipe {{ recipe.id }}: {{ recipe.title }}</li>
+      <li>
+        <a href= "{% url 'recipe' recipe.id %}">
+          Recipe {{ recipe.id }}: {{ recipe.title }}
+        </a>
+      </li>
     {% endfor %}
   </ul>
 {% endblock %}

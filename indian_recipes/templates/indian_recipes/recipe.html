@@ -5,11 +5,21 @@
 
 <h3>Ingredients</h3>
 <ul>
-  <li>{{ recipe.ingredient.amount }} {{recipe.ingredient.name }}</li>
+  {% for ingredient in ingredients %}
+  <li>{{ ingredient.amount }} {{ingredient.name }}</li>
+  {% empty %}
+  <li> None</li>
+  {% endfor %}
 </ul>
 
 <h3>Directions</h3>
 <ol>
-  <li>{{ recipe.direction.step }}</li>
+  {% for direction in directions %}
+  <li>{{ direction.step }}</li>
+  {% empty %}
+  <li> No directions.</li>
+  {% endfor %}
 </ol>
+
+<a href="{% url 'index' %}">Return to Home Page</a>
 {% endblock %}

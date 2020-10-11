@@ -11,5 +11,7 @@ def index(request):
 def recipe(request, recipe_id):
     recipe = Recipe.objects.get(pk=recipe_id)
     return render(request, "indian_recipes/recipe.html", {
-        "recipe": recipe
+        "recipe": recipe,
+        "ingredients": recipe.ingredients.all(),
+        "directions": recipe.directions.all(),
     })
